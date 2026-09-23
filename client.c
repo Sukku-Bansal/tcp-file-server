@@ -1,4 +1,14 @@
-#include "common.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <sys/stat.h>
+#include <time.h>
+
+#define PORT 8080
+#define BUFFER_SIZE 4096
 #include <ctype.h>
 #include <dirent.h>
 

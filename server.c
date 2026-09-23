@@ -86,10 +86,11 @@ void parse_request(char* buffer, char* filename, int* is_directory_request) {
     *is_directory_request = 0;
 
     if (path[0] == '/') {
-        strncpy(filename, path + 1, 255);
-    } else {
-        strncpy(filename, path, 255);
-    }
+    strncpy(filename, path + 1, 254);
+} else {
+    strncpy(filename, path, 254);
+}
+filename[254] = '\0';
 
     char* question = strchr(filename, '?');
     if (question) *question = '\0';
